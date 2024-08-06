@@ -1,4 +1,5 @@
 import Messages from '@/components/messages';
+import { unstable_noStore } from 'next/cache';
 
 
 // export const revalidate = 5;  //wide card revalidation, works as in the fetch approach
@@ -6,6 +7,7 @@ import Messages from '@/components/messages';
 
 
 export default async function MessagesPage() {
+  unstable_noStore();   // this is a granular approach to not caching sensitive fast changing content/dynamic
   const response = await fetch('http://localhost:8080/messages', {
     next: {
       revalidate: 5
