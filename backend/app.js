@@ -11,4 +11,6 @@ app.get('/messages', (req, res) => {
   ]);
 });
 
-app.listen(8080);
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => console.log(`Server started at port http//:localhost:${port}`));
