@@ -10,7 +10,7 @@ export default async function MessagesPage() {
   unstable_noStore();   // this is a granular approach to not caching sensitive fast changing content/dynamic
   const response = await fetch('http://localhost:8080/messages', {
     next: {
-      revalidate: 5
+      tags : ['msg']
     }
   });
   const messages = await response.json();
