@@ -1,6 +1,6 @@
 import Messages from '@/components/messages';
 import { getMessages } from '@/lib/messages';
-import { unstable_noStore } from 'next/cache';
+// import { unstable_noStore } from 'next/cache';
 
 
 // export const revalidate = 5;  //wide card revalidation, works as in the fetch approach
